@@ -1,6 +1,6 @@
 {
   "name": "conversions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Converts many different measures",
   "main": "./dist/index.js",
   "scripts": {
