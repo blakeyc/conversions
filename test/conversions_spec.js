@@ -76,5 +76,11 @@ describe('conversions', () => {
     done();
   });
 
+  it('should convert m to km using aliases', (done) => {
+    const test = conversions(1000, 'm', 'km');
+    expect(test).to.be.a('number');
+    expect(test).to.equal(1);
+    done();
+  });
 
 });
