@@ -1,0 +1,17 @@
+{
+  "name": "conversions",
+  "description": "Converts many different measures",
+  "main": "index.js",
+  "authors": [
+    "Chris Blakey <chris.a.blakey@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/blakeyc/conversions",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
