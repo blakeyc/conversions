@@ -28,5 +28,6 @@ conversions(1000, 'm', 'km'); // equals 1
 * metres
 * kilometres
 * feet
+* miles
 
 It is possible to pass through other unit values for each unit, for example m or metres or meters.

@@ -83,4 +83,11 @@ describe('conversions', () => {
     done();
   });
 
+  it('should convert mi to km using aliases', (done) => {
+    const test = conversions(1, 'mi', 'km');
+    expect(test).to.be.a('number');
+    expect(test).to.equal(1.60934);
+    done();
+  });
+
 });
