@@ -2,7 +2,7 @@
   "name": "conversions",
   "version": "1.0.1",
   "description": "Converts many different measures",
-  "main": "./dist/index.js",
+  "main": "./dist/conversions.js",
   "scripts": {
     "clean": "rimraf dist coverage",
     "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-register --recursive",
