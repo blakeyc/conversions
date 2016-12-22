@@ -11,6 +11,10 @@ Converts many different distance measures.
 
 `npm install --save conversions`
 
+or
+
+`bower install --save conversions`
+
 ## Usage
 
 `conversions(value, fromUnit, toUnit)`
