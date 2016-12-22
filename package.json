@@ -1,7 +1,7 @@
 {
   "name": "conversions",
   "version": "1.3.1",
-  "description": "Converts many different measures",
+  "description": "Converts many different distance measures",
   "main": "./dist/conversions.js",
   "scripts": {
     "clean": "rimraf dist coverage",
@@ -17,6 +17,9 @@
     "dist",
     "src"
   ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blakeyc/conversions.git"
@@ -29,7 +32,12 @@
     "imperial",
     "metric",
     "units",
-    "javascript"
+    "javascript",
+    "distance",
+    "miles",
+    "feet",
+    "metres",
+    "kilometres"
   ],
   "license": "MIT",
   "bugs": {
