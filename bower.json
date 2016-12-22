@@ -1,12 +1,21 @@
 {
   "name": "conversions",
   "description": "Converts many different measures",
-  "main": "index.js",
+  "version": "1.2.0",
+  "main": "./dist/conversions.js",
   "authors": [
     "Chris Blakey <chris.a.blakey@gmail.com>"
   ],
   "license": "MIT",
   "homepage": "https://github.com/blakeyc/conversions",
+  "keywords": [
+    "conversions",
+    "imperial",
+    "metric",
+    "units",
+    "javascript"
+  ],
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
