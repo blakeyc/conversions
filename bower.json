@@ -1,7 +1,7 @@
 {
   "name": "conversions",
   "description": "Converts many different measures",
-  "main": "./dist/conversions.js",
+  "main": "./dist/conversions.min.js",
   "authors": [
     "Chris Blakey <chris.a.blakey@gmail.com>"
   ],

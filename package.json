@@ -4,14 +4,15 @@
   "description": "Converts many different distance measures",
   "main": "./dist/conversions.js",
   "scripts": {
-    "clean": "rimraf dist coverage",
+    "clean": "rimraf coverage",
     "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-register --recursive",
     "test:watch": "npm test -- --watch",
     "cover": "cross-env BABEL_ENV=commonjs istanbul cover _mocha -- --compilers js:babel-register --recursive",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "lint": "eslint src test",
-    "build": "cross-env BABEL_ENV=commonjs babel src --out-dir dist",
-    "prepublish": "npm run clean && npm run lint && npm run test && npm run build"
+    "build": "cross-env BABEL_ENV=commonjs babel src --out-file dist/conversions.js",
+    "build-min": "cross-env BABEL_ENV=production babel src --out-file dist/conversions.min.js",
+    "prepublish": "npm run clean && npm run lint && npm run test && npm run build && npm run build-min"
   },
   "files": [
     "dist",
@@ -52,6 +53,7 @@
     "babel-plugin-transform-es2015-modules-umd": "^6.18.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-stage-2": "^6.13.0",
+    "babili": "0.0.9",
     "chai": "^3.5.0",
     "coveralls": "^2.11.15",
     "cross-env": "^3.0.0",
