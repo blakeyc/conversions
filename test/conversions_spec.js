@@ -8,15 +8,13 @@ describe('conversions', () => {
     done();
   });
 
-  it('should return null if a proper value is not provided', (done) => {
-    const test = conversions('a', 'metres', 'madeupmeasure');
-    expect(test).to.be.null;
+  it('should return error if a proper value is not provided', (done) => {
+    expect(function() { conversions('a', 'm', 'cm'); }).to.throw('Missing value to convert!');
     done();
   });
 
   it('should return null if any unit type not found', (done) => {
-    const test = conversions(1, 'metres', 'madeupmeasure');
-    expect(test).to.be.null;
+    expect(function() { conversions(1, 'm', 'madeupmeasure'); }).to.throw('Unit/Alias not currently supported!');
     done();
   });
 
@@ -72,7 +70,7 @@ describe('conversions', () => {
   it('should convert feet to kilometres', (done) => {
     const test = conversions(1, 'feet', 'kilometres');
     expect(test).to.be.a('number');
-    expect(test).to.equal(0.0003048);
+    expect(test).to.equal(0.000305);
     done();
   });
 
@@ -86,7 +84,42 @@ describe('conversions', () => {
   it('should convert mi to km using aliases', (done) => {
     const test = conversions(1, 'mi', 'km');
     expect(test).to.be.a('number');
-    expect(test).to.equal(1.60934);
+    expect(test).to.equal(1.610306);
+    done();
+  });
+
+  it('should convert in to cm', (done) => {
+    const test = conversions(1, 'in', 'cm');
+    expect(test).to.be.a('number');
+    expect(test).to.equal(2.54);
+    done();
+  });
+
+  it('should convert mm to in', (done) => {
+    const test = conversions(1000, 'mm', 'in');
+    expect(test).to.be.a('number');
+    expect(test).to.equal(39.370079);
+    done();
+  });
+
+  it('should convert cm to yards', (done) => {
+    const test = conversions(1000, 'cm', 'yards');
+    expect(test).to.be.a('number');
+    expect(test).to.equal(10.93613);
+    done();
+  });
+
+  it('should convert yards to miles', (done) => {
+    const test = conversions(100, 'yards', 'miles');
+    expect(test).to.be.a('number');
+    expect(test).to.equal(0.056784);
+    done();
+  });
+
+  it('should convert cm to mm', (done) => {
+    const test = conversions(1, 'cm', 'mm');
+    expect(test).to.be.a('number');
+    expect(test).to.equal(10);
     done();
   });
 

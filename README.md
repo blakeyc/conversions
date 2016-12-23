@@ -29,9 +29,14 @@ conversions(1000, 'm', 'km'); // equals 1
 
 ## Supported Units
 
+* milimetres
+* centimetres
 * metres
 * kilometres
+* inches
 * feet
+* yards
 * miles
 
-It is possible to pass through other unit values for each unit, for example m or metres or meters.
+## Aliases
+It is possible to pass through other unit values for each unit, for example `m|metre|metres|meter|meters` or `in|inch|inches`
