@@ -25,38 +25,27 @@
    * @module conversions.js
    */
 
-  var lookUp = {
-    metres: {
-      kilometres: { method: '/', value: 1000 },
-      feet: { method: '*', value: 3.28084 },
-      miles: { method: '/', value: 1609.344 }
-    },
-    kilometres: {
-      metres: { method: '*', value: 1000 },
-      feet: { method: '*', value: 3280.84 },
-      miles: { method: '*', value: 0.621371 }
-    },
-    feet: {
-      metres: { method: '*', value: 0.3048 },
-      kilometres: { method: '*', value: 0.0003048 },
-      miles: { method: '*', value: 0.000189394 }
-    },
-    miles: {
-      metres: { method: '*', value: 1609.34 },
-      feet: { method: '*', value: 5280 },
-      kilometres: { method: '*', value: 1.60934 }
-    }
-  };
-
   var aliases = {
+    '<mm>|<milimetres>|<milimetre>|<milimeters>|<milimeter>': {
+      name: 'millimetres'
+    },
+    '<cm>|<centimetres>|<centimetre>|<centimeters>|<centimeter>': {
+      name: 'centimetres'
+    },
     '<m>|<metres>|<metre>|<meters>|<meter>': {
       name: 'metres'
     },
     '<km>|<kilometres>|<kilometre>|<kilometers>|<kilometer>': {
       name: 'kilometres'
     },
+    '<in>|<inch>|<inches>': {
+      name: 'inches'
+    },
     '<ft>|<feet>|<foot>|<feets>|<foots>': {
       name: 'feet'
+    },
+    '<yd>|<yard>|<yards>': {
+      name: 'yards'
     },
     '<mi>|<mile>|<miles>': {
       name: 'miles'
@@ -73,18 +62,61 @@
     return unitActualName;
   }
 
+  function convertToMetres(value, unit) {
+    switch (unit) {
+      case 'millimetres':
+        return value * 0.001;
+      case 'centimetres':
+        return value * 0.01;
+      case 'kilometres':
+        return value * 1000;
+      case 'inches':
+        return value * (1 / 39.370079);
+      case 'feet':
+        return value * (1 / 3.280840);
+      case 'yards':
+        return value * (1 / 1.093613);
+      case 'miles':
+        return value * (1 / 0.000621);
+      default:
+        return value; // metres
+    }
+  }
+
+  function convertToUnit(value, unit) {
+    switch (unit) {
+      case 'millimetres':
+        return value * 1000;
+      case 'centimetres':
+        return value * 100;
+      case 'kilometres':
+        return value / 1000;
+      case 'inches':
+        return value * 39.370079;
+      case 'feet':
+        return value * 3.280840;
+      case 'yards':
+        return value * 1.093613;
+      case 'miles':
+        return value * 0.000621;
+      default:
+        return value; // metres
+    }
+  }
+
+  function round(value, decimals) {
+    return Number(Math.round(value + 'e' + decimals) + ('e-' + decimals));
+  }
+
   function conversions(value, fromUnit, toUnit) {
     var inputValue = parseFloat(value);
-    var fromUnitName = checkAliases(fromUnit);
-    var toUnitName = checkAliases(toUnit);
-    var conversion = lookUp[fromUnitName][toUnitName];
+    var from = checkAliases(fromUnit);
+    var to = checkAliases(toUnit);
 
-    if (!inputValue || !conversion) return null;
+    if (!inputValue) throw new Error('Missing value to convert!');
+    if (!from || !to) throw new Error('Unit/Alias not currently supported!');
 
-    if (conversion.method === '/') {
-      return inputValue / conversion.value;
-    }
-    return inputValue * conversion.value;
+    return round(convertToUnit(convertToMetres(value, from), to), 6);
   }
   module.exports = exports['default'];
 });
