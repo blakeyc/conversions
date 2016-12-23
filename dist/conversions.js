@@ -105,7 +105,7 @@
   }
 
   function round(value, decimals) {
-    return Number(Math.round(value + 'e' + decimals) + ('e-' + decimals));
+    return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
   }
 
   function conversions(value, fromUnit, toUnit) {
