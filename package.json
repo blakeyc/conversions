@@ -38,7 +38,11 @@
     "miles",
     "feet",
     "metres",
-    "kilometres"
+    "kilometres",
+    "inches",
+    "yards",
+    "centimetres",
+    "milimetres"
   ],
   "license": "MIT",
   "bugs": {
