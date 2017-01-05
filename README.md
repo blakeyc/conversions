@@ -5,6 +5,9 @@
 [![Coverage Status](https://coveralls.io/repos/github/blakeyc/conversions/badge.svg?branch=master)](https://coveralls.io/github/blakeyc/conversions?branch=master)
 [![npm downloads](https://img.shields.io/npm/dm/conversions.svg?style=flat-square)](https://www.npmjs.com/package/conversions)
 
+[![dependencies Status](https://david-dm.org/blakeyc/conversions/status.svg)](https://david-dm.org/blakeyc/conversions)
+[![devDependencies Status](https://david-dm.org/blakeyc/conversions/dev-status.svg)](https://david-dm.org/blakeyc/conversions?type=dev)
+
 Converts many different distance measures.
 
 ## Install
