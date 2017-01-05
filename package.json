@@ -59,7 +59,7 @@
     "babili": "0.0.9",
     "chai": "^3.5.0",
     "coveralls": "^2.11.15",
-    "cross-env": "^3.0.0",
+    "cross-env": "^3.1.4",
     "eslint": "^3.6.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.0.0",
@@ -68,9 +68,5 @@
     "istanbul": "^1.0.0-alpha",
     "mocha": "^3.0.2",
     "rimraf": "^2.5.4"
-  },
-  "dependencies": {
-    "cross-env": "^3.1.4",
-    "eslint-plugin-jsx-a11y": "^2.2.3"
   }
 }
