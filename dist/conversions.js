@@ -77,7 +77,7 @@
       case 'yards':
         return value * (1 / 1.093613);
       case 'miles':
-        return value * (1 / 0.000621);
+        return value * (1 / 0.000621371);
       default:
         return value; // metres
     }
@@ -98,7 +98,7 @@
       case 'yards':
         return value * 1.093613;
       case 'miles':
-        return value * 0.000621;
+        return value * 0.000621371;
       default:
         return value; // metres
     }

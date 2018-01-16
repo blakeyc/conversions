@@ -84,7 +84,7 @@ describe('conversions', () => {
   it('should convert mi to km using aliases', (done) => {
     const test = conversions(1, 'mi', 'km');
     expect(test).to.be.a('number');
-    expect(test).to.equal(1.610306);
+    expect(test).to.equal(1.609344);
     done();
   });
 
@@ -112,7 +112,7 @@ describe('conversions', () => {
   it('should convert yards to miles', (done) => {
     const test = conversions(100, 'yards', 'miles');
     expect(test).to.be.a('number');
-    expect(test).to.equal(0.056784);
+    expect(test).to.equal(0.056818);
     done();
   });
 
