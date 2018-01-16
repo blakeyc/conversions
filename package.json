@@ -1,6 +1,6 @@
 {
   "name": "conversions",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Converts many different distance measures",
   "main": "./dist/conversions.js",
   "scripts": {
